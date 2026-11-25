@@ -26,6 +26,7 @@ def main() -> None:
         text = f.read()
 
     body = text.rstrip("\n")
+    assert text == body + "\n", "entry must end with exactly one newline"
     assert 1 <= len(body) <= 199, f"length {len(body)} out of range"
     assert "\n" not in body, "entry must be a single line"
     assert body.strip(), "entry must not be only whitespace"
